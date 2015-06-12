@@ -1,0 +1,5 @@
+1.which tf 能显示出tf命令的默认路径
+  which('tf','-all') 显示出所有关于tf的路径，不同的工具箱里的命令可以重名
+2.license('test','control_toolbox') 查看对于control toolbox有没有授权
+3. ver可以查看所有的tool box
+4. matlabroot查看安装路径
