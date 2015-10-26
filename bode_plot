@@ -1,0 +1,17 @@
+Title: Make bode plot
+Transfer function is like this: H(s)=(R/L)*s/(s^2+(R/L)*s+1/(L*C))
+
+Here is matlab input:
+R=11;
+L=100e-3;
+C=10e-3;
+w=logspace(0,4,200);     //创造log的横坐标
+
+num=[R/L 0];            //分子，s的一次方项是R/L,s的零次方项为0
+den=[1 R/L 1/(L*C)];	//分母，分别为s的平方，s的一次方项，即常数项
+[mag,phase]=bode(num,den,w);
+figure 
+semilogx(w,20*log10(mag)) //plots the mag in dB w.r.t. log (w)
+xlabel('w')
+ylabel('Magnitude (dB)')
+title('Bode magnitude plot of example circuit')
